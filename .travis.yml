@@ -3,6 +3,6 @@ sudo: required
 solution: HMostafa_Alten_Vehicles_UseCase.sln
 mono: none
 dist: xenial
-dotnet: 3.0.100
+dotnet: 2.0.0
 script:
  - dotnet restore
