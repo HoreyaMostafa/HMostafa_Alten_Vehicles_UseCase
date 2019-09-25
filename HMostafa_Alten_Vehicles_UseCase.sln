@@ -17,9 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AltenVehiclesMS", "AltenVehiclesMS\AltenVehiclesMS.csproj", "{E9E63FA4-6C8A-4A52-BA7B-BFC8693BFD3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AltenVehiclesMS", "AltenVehiclesMS\AltenVehiclesMS.csproj", "{E9E63FA4-6C8A-4A52-BA7B-BFC8693BFD3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AltenCustomers.xUnitTests", "AltenCustomers.xUnitTests\AltenCustomers.xUnitTests.csproj", "{2BA0A822-EAE2-4B63-B912-DDA18BF4BF0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AltenCustomers.xUnitTests", "AltenCustomers.xUnitTests\AltenCustomers.xUnitTests.csproj", "{2BA0A822-EAE2-4B63-B912-DDA18BF4BF0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AltenMonitoring", "AltenMonitoring", "{677D6B5E-731D-4E05-B641-825BEE48286A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AltenMonitoringPortal", "AltenMonitoringPortal\AltenMonitoringPortal.csproj", "{055F8BB5-4E06-4150-ACF7-4B0CFC0ACE47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,10 @@ Global
 		{2BA0A822-EAE2-4B63-B912-DDA18BF4BF0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BA0A822-EAE2-4B63-B912-DDA18BF4BF0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BA0A822-EAE2-4B63-B912-DDA18BF4BF0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055F8BB5-4E06-4150-ACF7-4B0CFC0ACE47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055F8BB5-4E06-4150-ACF7-4B0CFC0ACE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055F8BB5-4E06-4150-ACF7-4B0CFC0ACE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055F8BB5-4E06-4150-ACF7-4B0CFC0ACE47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +55,7 @@ Global
 		{E9897234-85A2-4DEB-B05F-8C7AAB345159} = {774795D6-93EC-4804-90C0-02FA6D28F1AA}
 		{E9E63FA4-6C8A-4A52-BA7B-BFC8693BFD3C} = {C8B49156-0C54-446D-A847-8D8AA5AA2FD9}
 		{2BA0A822-EAE2-4B63-B912-DDA18BF4BF0D} = {774795D6-93EC-4804-90C0-02FA6D28F1AA}
+		{055F8BB5-4E06-4150-ACF7-4B0CFC0ACE47} = {677D6B5E-731D-4E05-B641-825BEE48286A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3D7D4E8D-FF7B-4F16-AE35-F805A553059C}

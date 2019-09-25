@@ -39,5 +39,6 @@ namespace AltenCustomers.xUnitTests
             var items = Assert.IsType<List<Customer>>(okResult.Value);
             Assert.Equal(3, items.Count);
         }
+
     }
 }

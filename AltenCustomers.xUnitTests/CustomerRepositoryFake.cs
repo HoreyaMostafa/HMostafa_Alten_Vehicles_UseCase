@@ -2,6 +2,7 @@
 using AltenCustomersMS.Repository;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AltenCustomers.xUnitTests
@@ -19,21 +20,18 @@ namespace AltenCustomers.xUnitTests
                     Id = 1,
                     Name = "Kalles Grustransporter AB",
                     Address = "Cementvägen 8, 111 11 Södertälje",
-                    //Vehicles = new List<Vehicle>()
                 },
                 new Customer
                 {
                     Id = 2,
                     Name = "Johans Bulk AB",
                     Address = "Balkvägen 12, 222 22 Stockholm",
-                    // Vehicles = new List<Vehicle>()
                 },
                 new Customer
                 {
                     Id = 3,
                     Name = "Haralds Värdetransporter AB",
                     Address = "Budgetvägen 1, 333 33 Uppsala",
-                    //Vehicles = new List<Vehicle>()
                 }
             };
         }
@@ -45,7 +43,7 @@ namespace AltenCustomers.xUnitTests
 
         public Customer GetCustomerByID(int CustomerId)
         {
-            throw new NotImplementedException();
+           return customers.FirstOrDefault(c => c.Id == CustomerId);
         }
     }
 }
