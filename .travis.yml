@@ -4,5 +4,8 @@ solution: HMostafa_Alten_Vehicles_UseCase.sln
 mono: none
 dist: xenial
 dotnet: 2.0.0
+branches:
+  only:
+    - master
 script:
  - dotnet restore
