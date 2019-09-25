@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AltenCustomers", "AltenCustomers", "{774795D6-93EC-4804-90C0-02FA6D28F1AA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AltenVehicles", "AltenVehicles", "{C8B49156-0C54-446D-A847-8D8AA5AA2FD9}"
+	ProjectSection(SolutionItems) = preProject
+		AltenVehiclesMS\Dockerfile = AltenVehiclesMS\Dockerfile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AltenHealthCheckPing", "AltenHealthCheckPing", "{EBA02934-98E6-4815-AF4A-31B0CD105381}"
 EndProject
@@ -23,7 +26,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AltenCustomers.xUnitTests",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AltenMonitoring", "AltenMonitoring", "{677D6B5E-731D-4E05-B641-825BEE48286A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AltenMonitoringPortal", "AltenMonitoringPortal\AltenMonitoringPortal.csproj", "{055F8BB5-4E06-4150-ACF7-4B0CFC0ACE47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AltenMonitoringPortal", "AltenMonitoringPortal\AltenMonitoringPortal.csproj", "{055F8BB5-4E06-4150-ACF7-4B0CFC0ACE47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
