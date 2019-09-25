@@ -8,7 +8,7 @@ namespace AltenVehiclesMS.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class VehicleController : ControllerBase
     {
         // GET api/values
         [HttpGet]
@@ -43,3 +43,4 @@ namespace AltenVehiclesMS.Controllers
         }
     }
 }
+

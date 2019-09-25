@@ -7,5 +7,9 @@ namespace AltenVehiclesMS.Models
 {
     public class VehiclePingHistory
     {
+        public int ID { get; set; }
+        public int VID { get; set; }
+        public DateTime PingTime { get; set; }
+      
     }
 }
