@@ -39,7 +39,7 @@ namespace AltenVehiclesMS.Controllers
         }
 
         [HttpPost("{vehicleId}")]
-        public IActionResult Ping(int vehicleId)
+        public IActionResult KeepAlive(int vehicleId)
         {
             _vehicleRepository.PingVehicle(vehicleId);
             return new OkResult();

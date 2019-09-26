@@ -24,7 +24,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AltenVehiclesMS", "AltenVeh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AltenCustomers.xUnitTests", "AltenCustomers.xUnitTests\AltenCustomers.xUnitTests.csproj", "{2BA0A822-EAE2-4B63-B912-DDA18BF4BF0D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AltenMonitoring", "AltenMonitoring", "{677D6B5E-731D-4E05-B641-825BEE48286A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AltenWebMonitoring", "AltenWebMonitoring", "{677D6B5E-731D-4E05-B641-825BEE48286A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagrams", "Diagrams", "{11F3043C-5B8D-49D6-8C83-1835E1A55C46}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

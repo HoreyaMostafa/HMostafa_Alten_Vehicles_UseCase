@@ -30,9 +30,9 @@ namespace AltenVehiclesMS.Repository
                 return new List<Vehicle>();
         }
 
-        public void PingVehicle(int VehicleId)
+        public void PingVehicle(string VehicleId)
         {
-            throw new NotImplementedException();
+            _dbContext.Vehicles.First<Vehicle>(x => x.VIN == VehicleId).LastSeen = DateTime.Now;
         }
         
     }

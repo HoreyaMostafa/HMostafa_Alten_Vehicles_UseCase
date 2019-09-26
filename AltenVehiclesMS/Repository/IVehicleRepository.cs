@@ -10,6 +10,6 @@ namespace AltenVehiclesMS.Repository
     {
         IEnumerable<Vehicle> GetAllVehicle();
         IEnumerable<Vehicle> FilterVehicles(int? customerID, bool? isConnected);
-        void PingVehicle(int VehicleId);
+        void PingVehicle(string VehicleId);
     }
 }
