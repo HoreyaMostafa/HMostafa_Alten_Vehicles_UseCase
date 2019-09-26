@@ -25,8 +25,8 @@ namespace AltenCustomersMS.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var customer = _customerRepository.GetAllCustomers();
-            return new OkObjectResult(customer);
+            var customers = _customerRepository.GetAllCustomers();
+            return new OkObjectResult(customers);
         }
 
 

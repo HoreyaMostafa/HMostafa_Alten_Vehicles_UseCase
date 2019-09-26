@@ -14,7 +14,6 @@ namespace AltenVehiclesMS.DBContexts
         }
 
         public DbSet<Vehicle> Vehicles { get; set; }
-        public DbSet<VehiclePingHistory> VehiclePingHistory { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,7 +24,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = " YS2R4X20005399401",
                     Regnr = "ABC123",
                     CustomerId = 1,
-
+                    LastSeen = null,
                 },
                 new Vehicle
                 {
@@ -33,7 +32,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "VLUR4X20009093588",
                     Regnr = "DEF456",
                     CustomerId = 1,
-
+                    LastSeen = null,
                 },
                 new Vehicle
                 {
@@ -41,7 +40,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "VLUR4X20009048066",
                     Regnr = "GHI789",
                     CustomerId = 1,
-
+                    LastSeen = null,
                 },
                 new Vehicle
                 {
@@ -49,7 +48,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "YS2R4X20005388011",
                     Regnr = "JKL012",
                     CustomerId = 2,
-
+                    LastSeen = null,
                 },
                 new Vehicle
                 {
@@ -57,7 +56,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "YS2R4X20005387949",
                     Regnr = "MNO345",
                     CustomerId = 2,
-
+                    LastSeen = null,
                 },
                 new Vehicle
                 {
@@ -65,7 +64,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "VLUR4X20009048066",
                     Regnr = "PQR678",
                     CustomerId = 3,
-
+                    LastSeen = null,
                 },
                 new Vehicle
                 {
@@ -73,7 +72,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "YS2R4X20005387055",
                     Regnr = "STU901",
                     CustomerId = 3,
-
+                    LastSeen = null,
                 }
               );
         }

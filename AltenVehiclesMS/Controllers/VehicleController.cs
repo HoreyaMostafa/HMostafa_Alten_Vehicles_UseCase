@@ -1,8 +1,9 @@
-﻿using System;
+﻿using AltenVehiclesMS.Repository;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 
 namespace AltenVehiclesMS.Controllers
 {
@@ -10,37 +11,39 @@ namespace AltenVehiclesMS.Controllers
     [ApiController]
     public class VehicleController : ControllerBase
     {
-        // GET api/values
+        private readonly IVehicleRepository _vehicleRepository;
+        public VehicleController(IVehicleRepository vehicleRepository)
+        {
+            _vehicleRepository = vehicleRepository;
+        }
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var vehicle = _vehicleRepository.GetAllVehicle();
+            return new OkObjectResult(vehicle);
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [HttpGet("customer/{customerId}", Name = "Get")]
+        public IActionResult GetByCustomer(int CustomerId)
         {
-            return "value";
+            var vehicles = _vehicleRepository.FilterVehicles(CustomerId, null);
+            return new OkObjectResult(vehicles);
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpGet("{isConnceted}")]
+        public IActionResult GetByConnectivityStatus(bool isConnceted)
         {
+            var vehicles = _vehicleRepository.FilterVehicles(null, isConnceted);
+            return new OkObjectResult(vehicles);
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("{vehicleId}")]
+        public IActionResult Ping(int vehicleId)
         {
+            _vehicleRepository.PingVehicle(vehicleId);
+            return new OkResult();
         }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
-

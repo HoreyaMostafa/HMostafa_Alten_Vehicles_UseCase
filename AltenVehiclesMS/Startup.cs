@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AltenVehiclesMS.DBContexts;
+using AltenVehiclesMS.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,7 +30,7 @@ namespace AltenVehiclesMS
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<VehicleContext>(o => o.UseSqlServer(Configuration.GetConnectionString("VehiclesDB")));
-            //services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
 
         }
 

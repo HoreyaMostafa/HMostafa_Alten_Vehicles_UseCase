@@ -9,7 +9,7 @@ namespace AltenVehiclesMS.Repository
     public interface IVehicleRepository
     {
         IEnumerable<Vehicle> GetAllVehicle();
-        IEnumerable<Vehicle> GetVehicle(int? customerID, bool? isConnected);
-
+        IEnumerable<Vehicle> FilterVehicles(int? customerID, bool? isConnected);
+        void PingVehicle(int VehicleId);
     }
 }

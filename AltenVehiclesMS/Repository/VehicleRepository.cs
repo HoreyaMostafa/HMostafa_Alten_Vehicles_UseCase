@@ -17,12 +17,23 @@ namespace AltenVehiclesMS.Repository
 
         public IEnumerable<Vehicle> GetAllVehicle()
         {
-            throw new NotImplementedException();
+            return _dbContext.Vehicles.ToList();
         }
 
-        public Vehicle GetVehicleByID(int VehicleId)
+        public IEnumerable<Vehicle> FilterVehicles(int? customerID, bool? isConnected)
+        {
+            if (customerID.HasValue)
+                return _dbContext.Vehicles.AsEnumerable<Vehicle>().Where(x => x.CustomerId == customerID);
+            else if (isConnected.HasValue)
+                return _dbContext.Vehicles.AsEnumerable<Vehicle>().Where(x => x.IsConnected == isConnected);
+            else
+                return new List<Vehicle>();
+        }
+
+        public void PingVehicle(int VehicleId)
         {
             throw new NotImplementedException();
         }
+        
     }
 }
