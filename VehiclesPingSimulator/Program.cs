@@ -32,14 +32,13 @@ namespace VehiclesPingSimulator
             var resullt = await GetAvailableVehiclesAsync();
             foreach(Vehicledata vd in resullt)
             {
-                Console.WriteLine($"ID: {vd.ID}\tPrice: " +
-              $"{vd.VIN}\VIN: {vd.Regnr}");
+                Console.WriteLine($"ID: {vd.ID}\tPrice: " + $"{vd.VIN}\t VIN: {vd.Regnr}");
             }
 
         }
         static async Task<IEnumerable<Vehicledata>> GetAvailableVehiclesAsync()
         {
-            string vehicleAPIURL = "https://localhost:44314/api/vehicle";//ConfigurationManager.AppSettings["VehiclesEndPoint"];
+            string vehicleAPIURL = ConfigurationManager.AppSettings["VehiclesEndPoint"];
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             HttpResponseMessage response = await client.GetAsync(vehicleAPIURL);
