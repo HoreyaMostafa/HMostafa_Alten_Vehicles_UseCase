@@ -8,7 +8,9 @@
 ## Technologies, Patterns & Tools:
 
 - Vistual Studio 2017
-- QL Server
+- SQL Server
+- Dot Net Core 2.0
+- Dot Net Core Web API
 - Implements Repositry Design Patterns
 - Unit testing : Xunit
 - CI : Travis
@@ -27,5 +29,3 @@
 
 - Implement the serverless design on AWS free tier.
 - Presist/Log all Vehicles Ping History.
-//- Portal compatibility on old browsers.
-//- Using SignalR /Websocket for realtime status onthe client web portal.

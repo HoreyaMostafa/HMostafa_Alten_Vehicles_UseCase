@@ -12,6 +12,5 @@ namespace VehiclesPingSimulator.Models
             public int CustomerId { get; set; }
             public DateTime? LastSeen { get; set; }
 
- 
     }
 }
