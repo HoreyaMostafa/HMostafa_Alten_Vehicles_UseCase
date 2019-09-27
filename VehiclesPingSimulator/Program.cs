@@ -14,31 +14,30 @@ namespace VehiclesPingSimulator
 {
     class Program
     {
+        static IConfiguration Configuration { get; set; }
         static HttpClient client = new HttpClient();
+
         static void Main(string[] args)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfigurationRoot configuration = builder.Build();
+            Configuration = builder.Build();
 
             RunAsync().GetAwaiter().GetResult();
-
         }
 
         static async Task RunAsync()
         {
-            // Get the product
             var resullt = await GetAvailableVehiclesAsync();
             foreach(Vehicledata vd in resullt)
             {
-                Console.WriteLine($"ID: {vd.ID}\tPrice: " + $"{vd.VIN}\t VIN: {vd.Regnr}");
+                Console.WriteLine($"ID: {vd.ID}\t VIN: " + $"{vd.VIN}\t Regnr: {vd.Regnr}");
             }
-
         }
         static async Task<IEnumerable<Vehicledata>> GetAvailableVehiclesAsync()
         {
-            string vehicleAPIURL = ConfigurationManager.AppSettings["VehiclesEndPoint"];
+            var vehicleAPIURL = Configuration.GetSection("AppSettings:VehiclesEndPoint").Value;
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             HttpResponseMessage response = await client.GetAsync(vehicleAPIURL);
