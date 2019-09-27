@@ -14,6 +14,9 @@ namespace AltenVehiclesMS.Models
 
         public DateTime? LastSeen { get; set; }
 
-        public bool IsConnected { get { return LastSeen.HasValue && LastSeen < DateTime.Now.AddMinutes(-1) ? true : false; } }
+        public bool IsConnected
+        {
+            get { return (!LastSeen.HasValue || LastSeen < DateTime.Now.AddMinutes(-1)) ? false : true; }
+        }
     } 
 }
