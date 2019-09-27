@@ -31,7 +31,7 @@ namespace VehiclesPingSimulator
         {
             var resullt = await GetAvailableVehiclesAsync();
             Random random = new Random();
-            var seconds = random.Next(60, 300);
+            var seconds = random.Next(30, 120);
             while (true)
             {
                 foreach (Vehicledata vd in resullt)
@@ -64,13 +64,14 @@ namespace VehiclesPingSimulator
 
         static async void SimulateRandomPing(string VehicleId)
         {
-            var pingVehicleAPIURL = Configuration.GetSection("AppSettings:VehiclesEndPoint").Value;
+            var pingVehicleAPIURL = Configuration.GetSection("AppSettings:VehiclesPing").Value + VehicleId;
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             HttpResponseMessage response = await client.GetAsync(pingVehicleAPIURL);
             if (response.IsSuccessStatusCode)
             {
-                await response.Content.ReadAsAsync<IEnumerable<Vehicledata>>();
+                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+              //  Console.WriteLine("Vehicle Ping success: ({1})", VehicleId);
             }
             else
             {
