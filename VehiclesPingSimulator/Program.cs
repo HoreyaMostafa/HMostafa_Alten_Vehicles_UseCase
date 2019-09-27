@@ -30,9 +30,18 @@ namespace VehiclesPingSimulator
         static async Task RunAsync()
         {
             var resullt = await GetAvailableVehiclesAsync();
-            foreach(Vehicledata vd in resullt)
+            Random random = new Random();
+            var seconds = random.Next(60, 300);
+            while (true)
             {
-                Console.WriteLine($"ID: {vd.ID}\t VIN: " + $"{vd.VIN}\t Regnr: {vd.Regnr}");
+                foreach (Vehicledata vd in resullt)
+                {
+                    await Task.Run(async delegate
+                     {
+                         SimulateRandomPing(vd.VIN);
+                         await Task.Delay(seconds * 1000);
+                     });
+                }
             }
         }
         static async Task<IEnumerable<Vehicledata>> GetAvailableVehiclesAsync()
@@ -53,9 +62,20 @@ namespace VehiclesPingSimulator
             return null;
         }
 
-        static void SimulateRandomPing(string VehicleId)
+        static async void SimulateRandomPing(string VehicleId)
         {
+            var pingVehicleAPIURL = Configuration.GetSection("AppSettings:VehiclesEndPoint").Value;
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+            HttpResponseMessage response = await client.GetAsync(pingVehicleAPIURL);
+            if (response.IsSuccessStatusCode)
+            {
+                await response.Content.ReadAsAsync<IEnumerable<Vehicledata>>();
+            }
+            else
+            {
+                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+            }
         }
     }
 }

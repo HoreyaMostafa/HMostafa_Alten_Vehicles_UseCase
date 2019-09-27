@@ -38,7 +38,7 @@ namespace AltenVehiclesMS.Controllers
             return new OkObjectResult(vehicles);
         }
 
-        [HttpPost("{vehicleId}")]
+        [HttpGet("ping/{vehicleId}")]
         public IActionResult KeepAlive(string vehicleId)
         {
             _vehicleRepository.PingVehicle(vehicleId);

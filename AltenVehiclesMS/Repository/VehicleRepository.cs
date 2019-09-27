@@ -33,6 +33,7 @@ namespace AltenVehiclesMS.Repository
         public void PingVehicle(string VehicleId)
         {
             _dbContext.Vehicles.First<Vehicle>(x => x.VIN == VehicleId).LastSeen = DateTime.Now;
+            _dbContext.SaveChanges();
         }
         
     }
