@@ -1,31 +1,54 @@
 version: '3.4'
 
+networks:
+  ntwrk_backend: {}
+
 services:
   altenvehiclesms:
-      image: ${DOCKER_REGISTRY-}altenvehiclesms
-      restart: always
       build:
         context: .
         dockerfile: AltenVehiclesMS/Dockerfile
+      restart: always
       container_name: altenvehiclesms
       ports:
-        - 2020:8080
+        - "1000:8080"
+      depends_on:
+        - db-server
+      networks:
+        - ntwrk_backend
 
   altencustomersms:
-      image: ${DOCKER_REGISTRY-}altencustomersms
-      restart: always
       build:
         context: .
         dockerfile: AltenCustomersMS/Dockerfile
+      restart: always
       container_name: altencustomersms
       ports:
-        - 1010:8080
+        - "2000:8080"
+      depends_on:
+        - db-server
+      networks:
+        - ntwrk_backend
 
   vehiclespingsimulator:
-      image: ${DOCKER_REGISTRY-}vehiclespingsimulator
-      restart: always
       build:
         context: .
         dockerfile: VehiclesPingSimulator/Dockerfile
+      restart: always
       container_name: vehiclespingsimulator
+      ports:
+        - "3000:8080"
+      networks:
+        - ntwrk_backend
 
+  db-server:
+      container_name: db-server
+      image: microsoft/mssql-server-linux:2017-latest
+      restart: always
+      environment:
+        SA_PASSWORD: "Alten1234"
+        ACCEPT_EULA: "Y"
+      ports:
+        - "1400:1433"   
+      networks:
+        - ntwrk_backend
