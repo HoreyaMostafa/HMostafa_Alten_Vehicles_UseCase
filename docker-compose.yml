@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+altenvehiclesms:
+    image: ${DOCKER_REGISTRY-}altenvehiclesms
+    build:
+      context: .
+      dockerfile: altenvehiclesms/Dockerfile
+
+
+altencustomersms:
+    image: ${DOCKER_REGISTRY-}altencustomersms
+    build:
+      context: .
+      dockerfile: altencustomersms/Dockerfile
+
+
+  vehiclespingsimulator:
+    image: ${DOCKER_REGISTRY-}vehiclespingsimulator
+    build:
+      context: .
+      dockerfile: VehiclesPingSimulator/Dockerfile
+
