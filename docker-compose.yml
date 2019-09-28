@@ -1,23 +1,31 @@
 version: '3.4'
 
 services:
-altenvehiclesms:
-    image: ${DOCKER_REGISTRY-}altenvehiclesms
-    build:
-      context: .
-      dockerfile: altenvehiclesms/Dockerfile
+  altenvehiclesms:
+      image: ${DOCKER_REGISTRY-}altenvehiclesms
+      restart: always
+      build:
+        context: .
+        dockerfile: AltenVehiclesMS/Dockerfile
+      container_name: altenvehiclesms
+      ports:
+        - 2020:8080
 
-
-altencustomersms:
-    image: ${DOCKER_REGISTRY-}altencustomersms
-    build:
-      context: .
-      dockerfile: altencustomersms/Dockerfile
-
+  altencustomersms:
+      image: ${DOCKER_REGISTRY-}altencustomersms
+      restart: always
+      build:
+        context: .
+        dockerfile: AltenCustomersMS/Dockerfile
+      container_name: altencustomersms
+      ports:
+        - 1010:8080
 
   vehiclespingsimulator:
-    image: ${DOCKER_REGISTRY-}vehiclespingsimulator
-    build:
-      context: .
-      dockerfile: VehiclesPingSimulator/Dockerfile
+      image: ${DOCKER_REGISTRY-}vehiclespingsimulator
+      restart: always
+      build:
+        context: .
+        dockerfile: VehiclesPingSimulator/Dockerfile
+      container_name: vehiclespingsimulator
 
