@@ -5,7 +5,6 @@ networks:
 
 services:
   db-server:
- #    image: microsoft/mssql-server-linux:2017-latest
       build:
         context: .
         dockerfile: MSSQL_RestoreBackups/Dockerfile
@@ -19,18 +18,18 @@ services:
       networks:
         - ntwrk_backend
 
-#  altenvehiclesms:
-#      build:
-#        context: .
-#        dockerfile: AltenVehiclesMS/Dockerfile
-#      restart: always
-#      container_name: altenvehiclesms
-#      ports:
-#        - "1000:8080"
-#      depends_on:
-#        - db-server
-#      networks:
-#        - ntwrk_backend
+  altenvehiclesms:
+      build:
+        context: .
+        dockerfile: AltenVehiclesMS/Dockerfile
+      restart: always
+      container_name: altenvehiclesms
+      ports:
+        - "1000:8080"
+      depends_on:
+        - db-server
+      networks:
+        - ntwrk_backend
 
   altencustomersms:
       build:
@@ -45,14 +44,14 @@ services:
       networks:
         - ntwrk_backend
 
- # vehiclespingsimulator:
- #     build:
- #       context: .
- #       dockerfile: VehiclesPingSimulator/Dockerfile
- #     restart: always
- #     container_name: vehiclespingsimulator
- #     ports:
- #       - "3000:8080"
- #     networks:
- #       - ntwrk_backend
+  vehiclespingsimulator:
+      build:
+        context: .
+        dockerfile: VehiclesPingSimulator/Dockerfile
+      restart: always
+      container_name: vehiclespingsimulator
+      ports:
+        - "3000:8080"
+      networks:
+        - ntwrk_backend
 
