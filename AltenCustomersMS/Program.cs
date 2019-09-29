@@ -17,8 +17,15 @@ namespace AltenCustomersMS
             CreateWebHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args)
+        {
+            var host = WebHost.CreateDefaultBuilder(args)
+             //   .UseKestrel()
+                .UseUrls($"http://0.0.0.0:5001")
                 .UseStartup<Startup>();
+            return host;
+        }
+
+
     }
 }

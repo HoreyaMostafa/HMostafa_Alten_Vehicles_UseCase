@@ -4,18 +4,33 @@ networks:
   ntwrk_backend: {}
 
 services:
-  altenvehiclesms:
+  db-server:
+ #    image: microsoft/mssql-server-linux:2017-latest
       build:
         context: .
-        dockerfile: AltenVehiclesMS/Dockerfile
+        dockerfile: MSSQL_RestoreBackups/Dockerfile
       restart: always
-      container_name: altenvehiclesms
+      container_name: db-server
+      environment:
+        SA_PASSWORD: "Alten1234"
+        ACCEPT_EULA: "Y"
       ports:
-        - "1000:8080"
-      depends_on:
-        - db-server
+        - "1400:1433"   
       networks:
         - ntwrk_backend
+
+#  altenvehiclesms:
+#      build:
+#        context: .
+#        dockerfile: AltenVehiclesMS/Dockerfile
+#      restart: always
+#      container_name: altenvehiclesms
+#      ports:
+#        - "1000:8080"
+#      depends_on:
+#        - db-server
+#      networks:
+#        - ntwrk_backend
 
   altencustomersms:
       build:
@@ -24,31 +39,20 @@ services:
       restart: always
       container_name: altencustomersms
       ports:
-        - "2000:8080"
+        - "2000:5001"
       depends_on:
         - db-server
       networks:
         - ntwrk_backend
 
-  vehiclespingsimulator:
-      build:
-        context: .
-        dockerfile: VehiclesPingSimulator/Dockerfile
-      restart: always
-      container_name: vehiclespingsimulator
-      ports:
-        - "3000:8080"
-      networks:
-        - ntwrk_backend
+ # vehiclespingsimulator:
+ #     build:
+ #       context: .
+ #       dockerfile: VehiclesPingSimulator/Dockerfile
+ #     restart: always
+ #     container_name: vehiclespingsimulator
+ #     ports:
+ #       - "3000:8080"
+ #     networks:
+ #       - ntwrk_backend
 
-  db-server:
-      container_name: db-server
-      image: microsoft/mssql-server-linux:2017-latest
-      restart: always
-      environment:
-        SA_PASSWORD: "Alten1234"
-        ACCEPT_EULA: "Y"
-      ports:
-        - "1400:1433"   
-      networks:
-        - ntwrk_backend
