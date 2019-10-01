@@ -13,7 +13,7 @@
 | Customers APIs      | http://localhost:5001/api/customer |Y|Y| .Net core WebAPI
 | Vehicles APIs     |All Vehicles>http://localhost:5000/api/vehicle	Connected_Vs>http://localhost:5000/api/vehicle/true	Disconncted_Vs>http://localhost:5000/api/vehicle/false	Customer_Vs>http://localhost:5000/api/vehicle/{CustomerID} | Y | X | .Net core WebAPI
 | Vehicles Ping API |   http://localhost:1000/api/vehicle/Ping/:VIN	|Y|X | .Net core ConsolePP
-| Vehicles Monitoring Web Protal | TBC|X|X| Angular7
+| Vehicles Monitoring Web Protal | In-Progress..|X|X| Angular7
 
 ## Technologies, Patterns & Tools:
 
