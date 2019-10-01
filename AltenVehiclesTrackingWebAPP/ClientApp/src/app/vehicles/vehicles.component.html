@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>
+      hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+    </title>
+</head>
+
+<body>
+  <div class="col-md-12">
+    <p class="homeText">{{homeText}}</p>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Vehicle Id</th>
+              <th>VIN</th>
+              <th>Register Number</th>
+              <th>Customer</th>
+              <th>LastSeen</th>
+              <th>Connected?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let vehicle of vehicles">
+              <td>{{vehicle.ID}}</td>
+              <td>{{vehicle.VIN}}</td>
+              <td>{{vehicle.Regnr}}</td>
+              <td>{{vehicle.CustomerId}}</td>
+              <td>{{vehicle.LastSeen}}</td>
+              <td>{{vehicle.IsConnected}}</td>
+              <!--<td>{{vehicle.LastSeen | date: 'dd/MM/yyyy'}}</td>-->
+            </tr>
+            </
+            bl
+          </tbody>
+          </
+          bl
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

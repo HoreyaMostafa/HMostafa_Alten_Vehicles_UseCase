@@ -21,7 +21,7 @@ namespace AltenCustomersMS
         {
             var host = WebHost.CreateDefaultBuilder(args)
              //   .UseKestrel()
-                .UseUrls($"http://0.0.0.0:5001")
+            //    .UseUrls($"http://0.0.0.0:5001")
                 .UseStartup<Startup>();
             return host;
         }
