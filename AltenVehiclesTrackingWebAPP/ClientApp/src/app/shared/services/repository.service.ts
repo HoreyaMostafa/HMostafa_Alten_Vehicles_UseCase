@@ -7,7 +7,7 @@ export class RepositoryService {
   constructor(private http: HttpClient) { }
 
   public getVehicles() {
-    var ff = this.http.request("GET", 'http://localhost:5000/api/vehicle')
+    var ff = this.http.get('http://localhost:5000/api/vehicle');
     return ff;
   }
 

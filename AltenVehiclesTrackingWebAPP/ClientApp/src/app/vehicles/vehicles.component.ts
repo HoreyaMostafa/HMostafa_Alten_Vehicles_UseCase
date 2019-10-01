@@ -17,7 +17,7 @@ export class VehiclesComponent implements OnInit {
 
   ngOnInit() {
     this.homeText = "WELCOME TO Alten-Vehicles Monitoring APPLICATION";
-    this.getAllOwners();
+   this.getAllOwners();
   }
 
   public getAllOwners() {
