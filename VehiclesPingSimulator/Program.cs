@@ -71,7 +71,6 @@ namespace VehiclesPingSimulator
             if (response.IsSuccessStatusCode)
             {
                 Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
-              //  Console.WriteLine("Vehicle Ping success: ({1})", VehicleId);
             }
             else
             {

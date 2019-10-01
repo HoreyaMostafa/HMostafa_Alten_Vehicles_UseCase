@@ -5,17 +5,27 @@
 
 ![alt text](https://github.com/HoreyaMostafa/HMostafa_Alten_Vehicles_UseCase/blob/master/Diagrams/SolutionDiagram.png)
 
+------------------------
+## Solution Details:
+
+| Component			  | Test						| Dockerized | UnitTesting |Tech
+| :--------------|:---------------:					| -----:| -----:|-----:|
+| Customers APIs      | http://localhost:2000/customer |Y|Y| .Net core WebAPI
+| Vehicles APIs     |All Vehicles>http://localhost:1000/api/vehicle	Connected_Vs>http://localhost:1000/api/vehicle/true	Disconncted_Vs>http://localhost:1000/api/vehicle/false	Customer_Vs>http://localhost:1000/api/vehicle/{CustomerID} | Y | X | .Net core WebAPI
+| Vehicles Ping API |   http://localhost:1000/api/vehicle/Ping/:VIN	|Y|X | .Net core ConsolePP
+| Vehicles Monitoring Web Protal | TBC|X|X| Angular7
+
 ## Technologies, Patterns & Tools:
 
 - Vistual Studio 2017
-- SQL Server
-- Dot Net Core 2.0
+- SQL Server - Express
 - Dot Net Core Web API
-- Implements Repositry Design Patterns
-- Unit testing : Xunit
-- CI : Travis
-- Repo: GitHub
-- Docker
+- DP-->  Repositry Design Patterns
+- SPA --> Angular 7
+- Unit testing -->  Xunit
+- CI --> Travis
+- Repo --> GitHub
+- Containerization: Docker
 
 
 ## Serverless/Cloud Solution Architecture - AWS Based:
