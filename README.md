@@ -15,6 +15,8 @@
 | Vehicles Ping API |   http://localhost:5002/api/vehicle/Ping/:VIN	|Y|X | .Net core ConsoleAPP
 | Vehicles Monitoring Web Protal | http://localhost:5003|X|X| Angular7
 
+![alt text](https://github.com/HoreyaMostafa/HMostafa_Alten_Vehicles_UseCase/blob/master/Diagrams/Alten_WebApp.png)
+
 ## Technologies, Patterns & Tools:
 
 - Vistual Studio 2017
