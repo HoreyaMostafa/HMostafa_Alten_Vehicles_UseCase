@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8" />
     <title>
-      hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
     </title>
 </head>
 
@@ -28,9 +27,9 @@
               <th>Vehicle Id</th>
               <th>VIN</th>
               <th>Register Number</th>
-              <th>Customer</th>
+              <th>CustomerName</th>
               <th>LastSeen</th>
-              <th>Connected?</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -38,9 +37,12 @@
               <td>{{v.id}}</td>
               <td>{{v.vin}}</td>
               <td>{{v.regnr}}</td>
-              <td>{{v.customerId}}</td>
+              <td>{{v.customerName}}</td>
               <td>{{v.lastSeen}}</td>
-              <td>{{v.isConnected}}</td>
+              <td>
+                <div *ngIf="v.isConnected==1" class="text-success"> Connected </div>
+                <div *ngIf="v.isConnected==0" class="text-danger"> Disconnected </div>
+              </td>
             </tr>
           </tbody>
         </table>

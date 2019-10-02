@@ -24,6 +24,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = " YS2R4X20005399401",
                     Regnr = "ABC123",
                     CustomerId = 1,
+                    CustomerName = "",
                     LastSeen = null,
                 },
                 new Vehicle
@@ -32,6 +33,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "VLUR4X20009093588",
                     Regnr = "DEF456",
                     CustomerId = 1,
+                    CustomerName = "Kalles Grustransporter AB",
                     LastSeen = null,
                 },
                 new Vehicle
@@ -40,6 +42,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "VLUR4X20009048066",
                     Regnr = "GHI789",
                     CustomerId = 1,
+                    CustomerName = "Kalles Grustransporter AB",
                     LastSeen = null,
                 },
                 new Vehicle
@@ -48,6 +51,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "YS2R4X20005388011",
                     Regnr = "JKL012",
                     CustomerId = 2,
+                    CustomerName = "Johans Bulk AB ",
                     LastSeen = null,
                 },
                 new Vehicle
@@ -56,6 +60,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "YS2R4X20005387949",
                     Regnr = "MNO345",
                     CustomerId = 2,
+                    CustomerName = "Johans Bulk AB ",
                     LastSeen = null,
                 },
                 new Vehicle
@@ -64,6 +69,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "VLUR4X20009048066",
                     Regnr = "PQR678",
                     CustomerId = 3,
+                    CustomerName = "Haralds Värdetransporter AB",
                     LastSeen = null,
                 },
                 new Vehicle
@@ -72,6 +78,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = "YS2R4X20005387055",
                     Regnr = "STU901",
                     CustomerId = 3,
+                    CustomerName = "Haralds Värdetransporter AB",
                     LastSeen = null,
                 }
               );

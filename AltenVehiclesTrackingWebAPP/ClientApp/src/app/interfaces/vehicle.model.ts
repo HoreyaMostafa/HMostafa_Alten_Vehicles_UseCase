@@ -3,6 +3,7 @@ export interface Vehicle {
   vin: string;
   regnr: string;
   customerId: number;
+  customerName: string;
   lastSeen: Date;
   isConnected: Boolean;
 }

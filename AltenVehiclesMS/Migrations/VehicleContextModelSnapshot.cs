@@ -27,6 +27,8 @@ namespace AltenVehiclesMS.Migrations
 
                     b.Property<int>("CustomerId");
 
+                    b.Property<string>("CustomerName");
+
                     b.Property<DateTime?>("LastSeen");
 
                     b.Property<string>("Regnr");
@@ -38,13 +40,13 @@ namespace AltenVehiclesMS.Migrations
                     b.ToTable("Vehicles");
 
                     b.HasData(
-                        new { ID = 1, CustomerId = 1, Regnr = "ABC123", VIN = " YS2R4X20005399401" },
-                        new { ID = 2, CustomerId = 1, Regnr = "DEF456", VIN = "VLUR4X20009093588" },
-                        new { ID = 3, CustomerId = 1, Regnr = "GHI789", VIN = "VLUR4X20009048066" },
-                        new { ID = 4, CustomerId = 2, Regnr = "JKL012", VIN = "YS2R4X20005388011" },
-                        new { ID = 5, CustomerId = 2, Regnr = "MNO345", VIN = "YS2R4X20005387949" },
-                        new { ID = 6, CustomerId = 3, Regnr = "PQR678", VIN = "VLUR4X20009048066" },
-                        new { ID = 7, CustomerId = 3, Regnr = "STU901", VIN = "YS2R4X20005387055" }
+                        new { ID = 1, CustomerId = 1, CustomerName = "", Regnr = "ABC123", VIN = " YS2R4X20005399401" },
+                        new { ID = 2, CustomerId = 1, CustomerName = "Kalles Grustransporter AB", Regnr = "DEF456", VIN = "VLUR4X20009093588" },
+                        new { ID = 3, CustomerId = 1, CustomerName = "Kalles Grustransporter AB", Regnr = "GHI789", VIN = "VLUR4X20009048066" },
+                        new { ID = 4, CustomerId = 2, CustomerName = "Johans Bulk AB ", Regnr = "JKL012", VIN = "YS2R4X20005388011" },
+                        new { ID = 5, CustomerId = 2, CustomerName = "Johans Bulk AB ", Regnr = "MNO345", VIN = "YS2R4X20005387949" },
+                        new { ID = 6, CustomerId = 3, CustomerName = "Haralds Värdetransporter AB", Regnr = "PQR678", VIN = "VLUR4X20009048066" },
+                        new { ID = 7, CustomerId = 3, CustomerName = "Haralds Värdetransporter AB", Regnr = "STU901", VIN = "YS2R4X20005387055" }
                     );
                 });
 #pragma warning restore 612, 618
