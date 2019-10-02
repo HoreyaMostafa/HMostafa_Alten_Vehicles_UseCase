@@ -34,14 +34,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let vehicle of vehicles">
-              <td>{{vehicle.ID}}</td>
-              <td>{{vehicle.VIN}}</td>
-              <td>{{vehicle.Regnr}}</td>
-              <td>{{vehicle.CustomerId}}</td>
-              <td>{{vehicle.LastSeen}}</td>
-              <td>{{vehicle.IsConnected}}</td>
-              <!--<td>{{vehicle.LastSeen | date: 'dd/MM/yyyy'}}</td>-->
+            <tr *ngFor="let v of vehicles">
+              <td>{{v.id}}</td>
+              <td>{{v.vin}}</td>
+              <td>{{v.regnr}}</td>
+              <td>{{v.customerId}}</td>
+              <td>{{v.lastSeen}}</td>
+              <td>{{v.isConnected}}</td>
             </tr>
           </tbody>
         </table>

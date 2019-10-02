@@ -21,7 +21,6 @@ export class VehiclesComponent implements OnInit {
   }
 
   public getAllOwners() {
-
     this.repository.getVehicles()
       .subscribe(res => {
         this.vehicles = res as Vehicle[];

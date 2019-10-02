@@ -29,6 +29,7 @@ namespace AltenCustomersMS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<CustomerContext>(o => o.UseSqlServer(Configuration.GetConnectionString("CustomersDB")));
             services.AddScoped<ICustomerRepository, CustomerRepository>();
@@ -39,6 +40,8 @@ namespace AltenCustomersMS
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors(option => option.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().DisallowCredentials());
+            app.UseMvc();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -49,7 +52,6 @@ namespace AltenCustomersMS
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
         }
     }
 }
