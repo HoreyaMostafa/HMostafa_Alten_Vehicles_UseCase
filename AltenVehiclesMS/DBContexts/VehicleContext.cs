@@ -24,7 +24,7 @@ namespace AltenVehiclesMS.DBContexts
                     VIN = " YS2R4X20005399401",
                     Regnr = "ABC123",
                     CustomerId = 1,
-                    CustomerName = "",
+                    CustomerName = "Kalles Grustransporter AB",
                     LastSeen = null,
                 },
                 new Vehicle

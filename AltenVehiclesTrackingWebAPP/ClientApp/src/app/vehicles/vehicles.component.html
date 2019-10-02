@@ -15,39 +15,57 @@
   <br>
   <br>
   <br>
-  <br>
+
+  <div class="row">
+      <div class="col-sm-5">
+        <select class="form-control" id="DDL_Customers" [(ngModel)]="filterCustomerID" (change)="changefilterCustomer($event)">
+          <option [value]="-1">Filter by customer</option>
+          <option *ngFor="let c of customers" [ngValue]="c.id">{{c.name}}</option>
+        </select>
+      </div>
+      <div class="col-sm-5">
+        <select class="form-control" id="DDL_vStatus" [(ngModel)]="filterIsConnected" (change)="changefilterStatus($event)" >
+          <option [value]="-1">Filter by Connectivity Status</option>
+          <option *ngFor="let c of vehicleStatus" [ngValue]="c.value">{{c.type}}</option>
+        </select>
+      </div>
+      <div class="col-sm-2">
+        <button type="submit" (click)="executeSearch()">Search</button>
+      </div>
+    </div>
+
   <br>
   <br>
   <div class="row">
-    <div class="col-md-12">
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Vehicle Id</th>
-              <th>VIN</th>
-              <th>Register Number</th>
-              <th>CustomerName</th>
-              <th>LastSeen</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let v of vehicles">
-              <td>{{v.id}}</td>
-              <td>{{v.vin}}</td>
-              <td>{{v.regnr}}</td>
-              <td>{{v.customerName}}</td>
-              <td>{{v.lastSeen}}</td>
-              <td>
-                <div *ngIf="v.isConnected==1" class="text-success"> Connected </div>
-                <div *ngIf="v.isConnected==0" class="text-danger"> Disconnected </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Vehicle Id</th>
+                <th>VIN</th>
+                <th>Register Number</th>
+                <th>CustomerName</th>
+                <th>LastSeen</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let v of vehicles">
+                <td>{{v.id}}</td>
+                <td>{{v.vin}}</td>
+                <td>{{v.regnr}}</td>
+                <td>{{v.customerName}}</td>
+                <td>{{v.lastSeen | date :'short'}}</td>
+                <td>
+                  <div *ngIf="v.isConnected==1" class="text-success"> Connected </div>
+                  <div *ngIf="v.isConnected==0" class="text-danger"> Disconnected </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
 </body>
 </html>
